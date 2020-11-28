@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from anotherProject.view import MyView
+from anotherProject.view import MyView, ReverseCommand
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MyView.as_view())
+    path('', MyView.as_view()),
+    path('reverse/', ReverseCommand.as_view(), name="reverse")
 ]
